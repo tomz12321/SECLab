@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script type = "text/javascript">
+			function calcResult() {
+				var x = 10;
+				var q = x + 2;
+
+				//display result
+				document.getElementById("quantityAresult").innerHTML = q;
+			}
+		</script>
+	</head>
+
+	<body>
+		<form action = "" method = "get" class = "shopping-cart">
+			<div class = "shopping-cart">
+				<label for = "product"> Product </label>
+				<label for = "price"> Price </label>
+				<label for = "quantity"> Quantity </label>
+				<label for = "subtotal"> Subtotal </label>
+				
+			</div>
+			<div class = "shopping-cart">
+				<label for = "productA"> <p> Product A </p> </label>
+				<label for = "priceA"> <p> $10 </p> </label>
+				<input type = "textA" name = "quantityA" id = "quantityA" required>
+				<label for = "priceA"> <p id = "q"></p> </label>
+			</div>
+
+			<div class = "shopping-cart">
+				<input type = "submit" vaule = "submit">
+			</div>
+		</form>
+	</body>
+</html>
