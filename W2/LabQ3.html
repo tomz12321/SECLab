@@ -1,35 +1,90 @@
 <html>
 	<head>
+		<style>
+			table,
+				td {
+    				border: 1px solid #333;
+				}
+
+			thead
+		</style>
 		<script type = "text/javascript">
-			function calcResult() {
-				var x = 10;
-				var q = x + 2;
+			function calcResult(quantityA,quantityB,quantityC){
+				//var x = y * 2;
+
+				var priceA = 10;
+				var priceB = 20;
+				var priceC = 30;
+
+				var resultA = Number(quantityA) * priceA;
+				var resultB = Number(quantityB) * priceB;
+				var resultC = Number(quantityC) * priceC;
+				var qTotal = Number(quantityA) + Number(quantityB) + Number(quantityC);
+				var pTotal = Number(resultA) + Number(resultB) + Number(resultC);
 
 				//display result
-				document.getElementById("quantityAresult").innerHTML = q;
+				document.getElementById("resultA").innerHTML = resultA;
+				document.getElementById("resultB").innerHTML = resultB;
+				document.getElementById("resultC").innerHTML = resultC;
+				document.getElementById("qTotal").innerHTML = qTotal;
+				document.getElementById("pTotal").innerHTML = pTotal;
 			}
 		</script>
 	</head>
 
 	<body>
-		<form action = "" method = "get" class = "shopping-cart">
 			<div class = "shopping-cart">
-				<label for = "product"> Product </label>
-				<label for = "price"> Price </label>
-				<label for = "quantity"> Quantity </label>
-				<label for = "subtotal"> Subtotal </label>
-				
-			</div>
-			<div class = "shopping-cart">
-				<label for = "productA"> <p> Product A </p> </label>
-				<label for = "priceA"> <p> $10 </p> </label>
-				<input type = "textA" name = "quantityA" id = "quantityA" required>
-				<label for = "priceA"> <p id = "q"></p> </label>
+				<table>
+					<thread>
+						<tr>
+							<th colspan="4"> Shopping-cart </th>
+						</tr>
+					</thread>
+
+					<tbody>
+						<tr>
+								<td> <label for = "product"> Product </label> </td>
+								<td> <label for = "price"> Price </label> </td>
+								<td> <label for = "quantity"> Quantity </label> </td>
+								<td> <label for = "subtotal"> Subtotal </label> </td>
+						</tr>
+
+						<tr>
+							<td> <label for = "productA"> <p> Product A </p> </label> </td>
+							<td> <label for = "priceA"> <p> $10 </p> </label> </td>
+							<td> <input type = "number" name = "quantityA" id = "quantityA" value = 2 required> </td>
+							<td> <p id = "resultA"></p> </td>
+						</tr>
+
+						<tr>
+							<td> <label for = "productB"> <p> Product B </p> </label> </td>
+							<td> <label for = "priceB"> <p> $20 </p> </label> </td>
+							<td> <input type = "number" name = "quantityB" id = "quantityB" value = 1 required> </td>
+							<td> <p id = "resultB"></p> </td>
+						</tr>
+
+						<tr>
+							<td> <label for = "productC"> <p> Product C </p> </label> </td>
+							<td> <label for = "priceC"> <p> $30 </p> </label> </td>
+							<td> <input type = "number" name = "quantityC" id = "quantityC" value = 3 required> </td>
+							<td> <p id = "resultC"></p> </td>
+								
+						</tr>
+
+					</tbody>
+					
+					<tfoot>
+						<tr>
+							<td colspan="2"> Total </td>
+							<td> <p id="qTotal"></p> </td>
+							<td> <p id="pTotal"></p> </td>
+						</tr>
+					</tfoot>
+
+				</table>
+				<button onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)"> Update </button>
+				<button onclick = "calcSubTotal(quantityA,quantityB,quantityC)"> Submit </button>
 			</div>
 
-			<div class = "shopping-cart">
-				<input type = "submit" vaule = "submit">
-			</div>
-		</form>
 	</body>
 </html>
