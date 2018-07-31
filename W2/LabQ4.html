@@ -52,21 +52,21 @@
 						<tr>
 							<td> <label for = "productA"> <p> Product A </p> </label> </td>
 							<td> <label for = "priceA"> <p> $10 </p> </label> </td>
-							<td> <input type = "number" name = "quantityA" id = "quantityA" value = 2 required> </td>
+							<td> <input onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)" type = "number" name = "quantityA" id = "quantityA" value = 2 max = 10 min = 0 required> </td>
 							<td> <p id = "resultA"></p> </td>
 						</tr>
 
 						<tr>
 							<td> <label for = "productB"> <p> Product B </p> </label> </td>
 							<td> <label for = "priceB"> <p> $15 </p> </label> </td>
-							<td> <input type = "number" name = "quantityB" id = "quantityB" value = 1 required> </td>
+							<td> <input onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)" type = "number" name = "quantityB" id = "quantityB" value = 1 max = 10 min = 0 required> </td>
 							<td> <p id = "resultB"></p> </td>
 						</tr>
 
 						<tr>
 							<td> <label for = "productC"> <p> Product C </p> </label> </td>
 							<td> <label for = "priceC"> <p> $20 </p> </label> </td>
-							<td> <input type = "number" name = "quantityC" id = "quantityC" value = 3 required> </td>
+							<td> <input onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)" type = "number" name = "quantityC" id = "quantityC" value = 3 max = 10 min = 0 required> </td>
 							<td> <p id = "resultC"></p> </td>
 								
 						</tr>
@@ -82,8 +82,8 @@
 					</tfoot>
 
 				</table>
-				<button onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)"> Update </button>
 				<button onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)"> Submit </button>
   			</div>
+  			<p>Max:10 , Min:0</p>
 	</body>
 </html>
