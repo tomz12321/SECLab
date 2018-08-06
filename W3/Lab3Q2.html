@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<style>
+			table,
+				td {
+    				border: 1px solid #333;
+				}
+
+			thead
+		</style>
+	</head>
+	<body>
+
+			<Form action ="Lab3Q2.php" method="POST">
+			<div class = "shopping-cart">
+				<table>
+					<thread>
+						<tr>
+							<th colspan="4"> Shopping-cart </th>
+						</tr>
+					</thread>
+
+					<tbody>
+					
+						<tr>
+								<td> <label for = "product"> Product </label> </td>
+								<td> <label for = "price"> Price </label> </td>
+								<td> <label for = "quantity"> Quantity </label> </td>
+								<td> <label for = "subtotal"> Subtotal </label> </td>
+						</tr>
+
+						<tr>
+							<td> <label for = "productA"> <p> Product A </p> </label> </td>
+							<td> <label for = "priceA"> <p> $10 </p> </label> </td>
+							<td> <input type = "number" name = "quantityA" id = "quantityA" value = 2 required> </td>
+							<td> <p id = "resultA"></p> <input id="subA" name="subA" type="hidden"> </td>
+						</tr>
+
+						<tr>
+							<td> <label for = "productB"> <p> Product B </p> </label> </td>
+							<td> <label for = "priceB"> <p> $15 </p> </label> </td>
+							<td> <input type = "number" name = "quantityB" id = "quantityB" value = 1 required> </td>
+							<td> <p id = "resultB"></p> <input id="subB" name="subB" type="hidden"> </td>
+						</tr>
+
+						<tr>
+							<td> <label for = "productC"> <p> Product C </p> </label> </td>
+							<td> <label for = "priceC"> <p> $20 </p> </label> </td>
+							<td> <input type = "number" name = "quantityC" id = "quantityC" value = 3 required> </td>
+							<td> <p id = "resultC"></p> <input id="subC" name="subC" type="hidden"> </td>
+								
+						</tr>
+
+					</tbody>
+					
+					<tfoot>
+						<tr>
+							<td colspan="2"> Total </td>
+							<td> <p id="qTotal"></p> <input id="totalQuantity" name="totalQuantity" type="hidden"></td>
+							<td> <p id="pTotal"></p> <input id="totalPrice" name="totalPrice" type="hidden"></td>
+						</tr>
+					</tfoot>
+				
+				</table>
+				<button onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)"> Update </button>
+				<button onclick = "calcResult(quantityA.value,quantityB.value,quantityC.value)"> Submit </button>
+  			</div>
+  			</Form>
+  			<script type = "text/javascript">
+			function calcResult(quantityA,quantityB,quantityC){
+				//var x = y * 2;
+
+				var priceA = 10;
+				var priceB = 15;
+				var priceC = 20;
+
+				var resultA = Number(quantityA) * Number(priceA);
+				var resultB = Number(quantityB) * Number(priceB);
+				var resultC = Number(quantityC) * Number(priceC);
+				var qTotal = Number(quantityA) + Number(quantityB) + Number(quantityC);
+				var pTotal = Number(resultA) + Number(resultB) + Number(resultC);
+
+				//display result
+				document.getElementById("resultA").innerHTML = resultA;
+				document.getElementById("subA").value = resultA;
+				document.getElementById("resultB").innerHTML = resultB;
+				document.getElementById("subB").value = resultB;
+				document.getElementById("resultC").innerHTML = resultC;
+				document.getElementById("subC").value = resultC;
+				document.getElementById("qTotal").innerHTML = qTotal;
+				document.getElementById("totalQuantity").value = qTotal;
+				document.getElementById("pTotal").innerHTML = pTotal;
+				document.getElementById("totalPrice").value = pTotal;
+			}
+		</script>
+	</body>
+</html>
