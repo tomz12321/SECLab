@@ -10,7 +10,7 @@
 		</style>
 	</head>
 	<body>
-		<?php echo var_dump($_POST); ?>
+		<?//php echo var_dump($_POST); ?>
 		<!-- ?php echo $_POST['entered']; -->
 		<?//php $quantityA = $_POST["quantityA"]; ?>
 		<?//php $resultA = $_POST["resultA"]; ?>
