@@ -1,10 +1,18 @@
 <html>
+	<style type="text/css"> 
+	input{
+    	width: 300px;
+	}
+	</style>
+
 	<body>
-	<Form action ="client.php" method="POST">
+	<Form action ="server.php" method="POST">
 
 		<h1>Lab4</h1>
-		<p>Enter:</p><input type="text" value="Please insert your text here." required="">
-		<button action = "server.php">submit</button>
+		<p>Enter:</p> 
+		<input id="inputText" name="inputText" type="text" value="Please insert your text here." required="">
+		<br/><br/>
+		<button>submit</button>
 		<br/><br/>
 
 		<!--<?php
@@ -22,5 +30,6 @@
 		Think about fopen(), fwrite() and fclose() functions -->
 	
 	</Form>
+
 	</body>
 </html>

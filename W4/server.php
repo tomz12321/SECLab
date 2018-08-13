@@ -1,6 +1,9 @@
 <html>
 	<body>
 
+	<?//php echo var_dump($_POST); ?>
+	<?//php echo $_POST['inputText']; ?>
+	
 	<?php
 
 	//open a file named "text.txt"
@@ -12,13 +15,17 @@
 				//fclose($file);
 
 				$file = fopen("database.txt","a");
-				$anything = "\ntest";
+				//write into the users.txt file
+				$anything = $_POST['inputText'];
+				echo $anything;
 				//write into the database.txt
 				fwrite($file, $anything);
+				//write "\n" into the database.txt
+				fwrite($file, "\n");
 				//close($file);
 				fclose($file);
 
 	?>
-	
+
 	</body>
 </html>
