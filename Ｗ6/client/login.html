@@ -1,0 +1,30 @@
+<html>
+<body>
+
+<h2>Lab 6 Login</h2>
+
+<form action="../server/login.php" method="POST">
+
+username: <input type="text" name="usr" id="usr">
+<br/><br/>
+
+password: <input type="password" name="pwd" id="pwd">
+<br/><br/>
+
+<button type="submit" onclick="hash()">Login</button>
+<p> </p>
+<a href="../client/register.html">Go to Register page</a>
+
+</form>
+
+<script src="js/sha256.js"></script>
+<script type="text/javascript">
+		function hash() {
+			var input = document.getElementById('pwd').value;
+			var hash = SHA256.hash(input);			
+			document.getElementById("pwd").value = hash;
+		}
+</script>
+
+</body>
+</html>
