@@ -1,0 +1,57 @@
+
+<html>
+	<body>
+
+	<h1>Lab 7 Demo 1: JavaScript DES test</h1>
+
+
+	Enter a Message: <input id="message" type="text">
+	<br><br>
+	Select a DES encryption key: <input id="DES_Encryption_Key" type="text">
+	<br><br>
+	<button type="button" onclick="DES_encryption()">Encrypt the Message</button>
+	
+	<h3>Encrypted value</h3>
+	<p id="encrypted"></p>
+	
+	
+	<br><br>
+	Enter a DES decryption key to decrypt: <input id="DES_Decryption_Key" type="text">
+	<br><br>
+	<button type="button" onclick="DES_decryption()">Decrypt the "Encrypted value"</button>
+	<h3>Decrypted value</h3>
+	<p id="decrypted"></p>
+	
+
+	<script type="text/javascript" src="des.js"></script>
+	
+
+	<script type="text/javascript">
+		function DES_encryption() {
+			
+			var message = document.getElementById("message").value;
+			
+			var key = document.getElementById("DES_Encryption_Key").value;
+
+			// javascript des encryption api
+			var encrypted = javascript_des_encryption(key, message);
+			
+			document.getElementById("encrypted").innerHTML = encrypted;	
+
+		}
+		
+		function DES_decryption() {
+		
+			var message = document.getElementById("encrypted").innerHTML;
+			
+			var key = document.getElementById("DES_Decryption_Key").value;
+			
+			// javascript des decryption api
+			var decrypted = javascript_des_decryption(key,message);
+		
+			document.getElementById("decrypted").innerHTML = decrypted;
+		}
+	</script>
+
+	</body>
+</html>

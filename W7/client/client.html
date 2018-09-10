@@ -1,0 +1,28 @@
+<html>
+<body>
+<h1>Lab 7 DES</h1>
+<FORM ACTION="../server/server.php" method="POST">
+       	Enter the message: <input type="text" id="message" name="message" />
+       	<br/><br/>
+       	Enter the encryption key: <input type="text" id="DES_Encryption_Key" name="DES_Encryption_Key" />
+       	<br/><br/>
+       	<button type="submit" onclick="DES_encryption()">Submit</button>
+</table>
+</FORM>
+<script type="text/javascript" src="js/des.js"></script>
+<script type="text/javascript">
+function DES_encryption() {
+                               	
+       	var message = document.getElementById("message").value;
+                               	
+       	var key = document.getElementById("DES_Encryption_Key").value;
+       	// javascript des encryption api
+       	var encrypted = javascript_des_encryption(key, message);
+                               	
+       	document.getElementById("message").value = encrypted;   	
+       	
+       	return false;
+}
+</script>
+</body>
+</html>
