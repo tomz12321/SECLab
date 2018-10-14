@@ -1,0 +1,33 @@
+<html>
+<body>
+
+<h2>SEC Assignment Register</h2>
+
+
+<form action="../server/register.php" method="POST">
+
+Username: <input type="text" name="usr" id="usr">
+<br/><br/>
+Password: <input type="password" name="pwd" id="pwd">
+<br/><br/>
+<button type="submit" onclick="hashPassword()">Submit to register</button>
+</form>
+
+
+<script src="js/sha256.js"></script>
+<script type="text/javascript">
+
+		function hashPassword() {
+			var input = document.getElementById('pwd').value;
+			var hash = SHA256.hash(input);
+			
+			document.getElementById("pwd").innerHTML = hash;
+			document.getElementById("pwd").value = hash;
+		}
+</script>
+
+<a href="../client/login.html">Go back to login page</a>
+
+</body>
+</html>
+
